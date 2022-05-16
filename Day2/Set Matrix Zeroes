@@ -1,1 +1,42 @@
-hh
+public void setZeroes(int[][] matrix) {
+        
+        int i = 0;
+        int j = 0;
+        boolean var = true;
+        while( i < matrix.length ){
+            while( j < matrix[0].length ){
+                if( matrix[i][j] == 0 ){
+                    if( j == 0 ){
+                        var = false;
+                    }else{
+                        matrix[0][j] = 0;
+                        matrix[i][0] = 0;
+                    }
+                }
+                j++;
+            }
+            i++;
+            j = 0;
+        }
+        int k = matrix.length - 1;
+        int l = matrix[0].length - 1;
+        while( k >= 0 ){
+            while( l > 0 ){
+                
+                if( matrix[0][l] == 0 || matrix[k][0] == 0 ){
+                    matrix[k][l] = 0;
+                }
+                l--;
+            }
+            k--;
+            l = matrix[0].length-1;
+        }
+        if( !var ){
+            for (int m = 0; m < matrix.length; m++) {
+                matrix[m][0] = 0;
+            }
+        }
+        
+        
+
+    }
