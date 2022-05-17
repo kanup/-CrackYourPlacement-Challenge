@@ -1,1 +1,17 @@
-hh
+public int chocolateDistribution(int[] packets, int students) {
+  if( students > packets.length ){
+    return -1;
+  }
+  Arrays.sort(packets);
+  int min = 0;
+  int max = m-1;
+  int min_diff = 0;
+  while( max < packets.length ){
+    min_diff = Math.min(packets[max] - packets[min], min_diff);
+    min++;
+    max++;
+  }
+  return min_diff;
+  
+       
+}
