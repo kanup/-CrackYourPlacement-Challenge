@@ -1,0 +1,13 @@
+public int maxProfit(int[] prices) {
+        int currmin = 0;
+        int currmax = 1;
+        int profit = 0;
+        while( currmax < prices.length ){
+            if( prices[currmin] < prices[currmax] ){
+                profit += prices[currmax] - prices[currmin];
+            }
+            currmin++;
+            currmax++;
+        }
+        return profit;
+    }
