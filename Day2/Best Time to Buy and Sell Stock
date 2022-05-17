@@ -1,0 +1,41 @@
+public int maxProfit(int[] prices) {
+        
+        // optimal -> O(n) TC and O(1) SC
+        int min_sofar = prices[0];
+        int profit = 0;
+        for( int i = 1; i < prices.length; i++ ){
+            if( prices[i] < min_sofar ){
+                min_sofar = prices[i];
+            }else{
+                if( profit < prices[i] - min_sofar ){
+                    profit = prices[i] - min_sofar;
+                }
+                // profit = Math.max(profit, prices[i] - min_sofar );
+            }
+        }
+        return profit;
+        
+        // brute force -> O(n^2)
+        
+        
+        //sub-optimal -> O(n) TC and O(n) SC
+        // int[] arr = new int[prices.length];
+        // arr[prices.length-1] = 0;
+        // int i = prices.length-2;
+        // while( i >= 0 ){
+        //     if( Math.max( prices[i+1], arr[i+1]) > prices[i] ){
+        //         arr[i] = Math.max( prices[i+1], arr[i+1]);
+        //     }else{
+        //         arr[i] = 0;
+        //     }
+        //     i--;
+        // }
+        // int max_profit = 0;
+        // for( int j = 0; j < prices.length; j++ ){
+        //     max_profit = Math.max(max_profit, arr[j] - prices[j]);
+        // }
+        // return max_profit;
+        
+        
+       
+    }
