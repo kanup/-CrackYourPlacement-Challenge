@@ -1,0 +1,29 @@
+public int getDecimalValue(ListNode head) {
+        if( head == null ){
+            return 0;
+        }
+        ListNode temp = head;
+        int ans = 0;
+        while( temp.next != null ){
+            ans += temp.val;
+            ans *= 2;
+            temp = temp.next;
+        }
+        if( temp.val == 0 ){
+            return ans;
+        }else{
+            ans += 1;
+            return ans;
+        }
+    
+        
+      
+//         int ans = 0;
+//        while( head != null ){
+//            ans = ans * 2;
+//            ans = ans + head.val;
+//            head = head.next;
+           
+//        }
+//         return ans;
+    }
