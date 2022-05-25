@@ -1,0 +1,22 @@
+public long multiplyTwoLists(Node l1,Node l2){
+          if( l1.next == null &&  l2.next == null ){
+              return l1.data * l2.data;
+          }
+          Node temp1  = l1;
+          Node temp2 = l2;
+          long numb1 = 0;
+          long numb2 = 0;
+          while( temp1 != null ){
+              numb1 = (numb1 * 10)% (1000000000 + 7);
+              numb1 += temp1.data;
+              temp1 = temp1.next;
+          }
+          while( temp2 != null ){
+              numb2 = (numb2 * 10) % (1000000000 + 7);
+              numb2 += temp2.data;
+              temp2 = temp2.next;
+          }
+          long ans = (numb1 % (1000000000 + 7)) * (numb2 % (1000000000 + 7));
+          return (ans % (1000000000 + 7));
+          
+   }
